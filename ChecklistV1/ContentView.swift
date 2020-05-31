@@ -30,20 +30,20 @@ struct ContentView: View {
                     HStack{
                         Text(ChecklistItem.name)
                         Spacer()
-                        Text(ChecklistItem.isChecked ? "✅" : "❎")
+                        Text(ChecklistItem.isChecked ? "☑️" : "⬜️")
+                    }
+                    .background(Color.white)
+                    .onTapGesture{
+                        if let matchingIndex = self.checklistItems.firstIndex(where: { $0.id == ChecklistItem.id }) {
+                            self.checklistItems[matchingIndex].isChecked.toggle()
+                        }
+                        self.printChecklistContents()
                         
                     }
-                        //.onTapGesture{
-                            //let indexesToRemove = IndexSet(integersIn: 0...4)
-                            //print("indexesToRemove=", indexesToRemove)
-                            //self.checklistItems.remove(atOffsets: indexesToRemove)
-                            //self.checklistItems.remove(at: 0)
-                            //self.checklistItems.append(item)
-                            //self.printChecklistContents()
-                    //}
                 }//End of ForEach
                 .onDelete(perform: deleteListItem)
-                    .onMove(perform: moveListItem)
+                .onMove(perform: moveListItem)
+                
             }//End of List
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("Checklist")
