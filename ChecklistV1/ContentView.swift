@@ -7,14 +7,34 @@
 //
 
 import SwiftUI
+struct ChecklistItem {
+    var name: String
+    var isChecked: Bool = false
+}
 
 struct ContentView: View {
-    @State var checklistItems = ["Walk the dog", "Brush my teeth", "Learn iOS development", "Soccer practice", "Eat Ice cream"]
+    //@State var checklistItems = ["Walk the dog", "Brush my teeth", "Learn iOS development", "Soccer practice", "Eat Ice cream"]
+    @State var checklistItems = [
+        ChecklistItem(name: "Walk the dog"),
+        ChecklistItem(name: "Brush my teeth"),
+        ChecklistItem(name: "Learn iOS development", isChecked: true),
+        ChecklistItem(name: "Soccer practice"),
+        ChecklistItem(name: "Eat Ice cream", isChecked: true)
+    ]
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklistItems, id: \.self){
-                    item in Text(item)
+                ForEach(checklistItems, id: \.self.name){
+                    ChecklistItem in
+                    HStack{
+                        Text(ChecklistItem.name)
+                        Spacer()
+                        if ChecklistItem.isChecked{
+                            Text("✅")
+                        } else {
+                            Text("❎")
+                        }
+                    }
                         //.onTapGesture{
                             //let indexesToRemove = IndexSet(integersIn: 0...4)
                             //print("indexesToRemove=", indexesToRemove)
