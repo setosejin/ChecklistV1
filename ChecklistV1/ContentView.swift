@@ -15,19 +15,22 @@ struct ContentView: View {
             List {
                 ForEach(checklistItems, id: \.self){
                     item in Text(item)
-                        .onTapGesture{
-                            let indexesToRemove = IndexSet(integersIn: 0...4)
-                            print("indexesToRemove=", indexesToRemove)
-                            self.checklistItems.remove(atOffsets: indexesToRemove)
+                        //.onTapGesture{
+                            //let indexesToRemove = IndexSet(integersIn: 0...4)
+                            //print("indexesToRemove=", indexesToRemove)
+                            //self.checklistItems.remove(atOffsets: indexesToRemove)
                             //self.checklistItems.remove(at: 0)
                             //self.checklistItems.append(item)
-                            self.printChecklistContents()
-                    }
-                }
+                            //self.printChecklistContents()
+                    //}
+                }//End of ForEach
+                .onDelete(perform: deleteListItem)
+                    .onMove(perform: moveListItem)
             }//End of List
+            .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("Checklist")
-                .onAppear(){
-                    self.printChecklistContents()
+            .onAppear(){
+                self.printChecklistContents()
             }
         }//End of Navigation View
     }//End of body
@@ -39,6 +42,15 @@ struct ContentView: View {
         }
     }
     
+    func deleteListItem(whichElement: IndexSet){
+        checklistItems.remove(atOffsets: whichElement)
+        printChecklistContents()
+    }
+    
+    func moveListItem(whichElement: IndexSet, destination: Int){
+        checklistItems.move(fromOffsets: whichElement, toOffset: destination)
+        printChecklistContents()
+    }
 }//End of Content View
 
 struct ContentView_Previews: PreviewProvider {
