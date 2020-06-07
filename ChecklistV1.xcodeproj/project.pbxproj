@@ -16,6 +16,7 @@
 		0AFDD1CA2486399800846157 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFDD1C92486399800846157 /* ChecklistItem.swift */; };
 		0AFDD1CC24863B0C00846157 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFDD1CB24863B0C00846157 /* Checklist.swift */; };
 		0AFDD1CE248951A100846157 /* EditChecklistitemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFDD1CD248951A100846157 /* EditChecklistitemView.swift */; };
+		0AFDD1D8248D150800846157 /* NewChecklistitemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFDD1D7248D150800846157 /* NewChecklistitemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0AFDD1C92486399800846157 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		0AFDD1CB24863B0C00846157 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		0AFDD1CD248951A100846157 /* EditChecklistitemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChecklistitemView.swift; sourceTree = "<group>"; };
+		0AFDD1D7248D150800846157 /* NewChecklistitemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChecklistitemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0AFDD194248154B900846157 /* SceneDelegate.swift */,
 				0AFDD1CD248951A100846157 /* EditChecklistitemView.swift */,
 				0AFDD196248154B900846157 /* ContentView.swift */,
+				0AFDD1D7248D150800846157 /* NewChecklistitemView.swift */,
 				0AFDD1C92486399800846157 /* ChecklistItem.swift */,
 				0AFDD1CB24863B0C00846157 /* Checklist.swift */,
 				0AFDD198248154C000846157 /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFDD1CC24863B0C00846157 /* Checklist.swift in Sources */,
+				0AFDD1D8248D150800846157 /* NewChecklistitemView.swift in Sources */,
 				0AFDD193248154B900846157 /* AppDelegate.swift in Sources */,
 				0AFDD195248154B900846157 /* SceneDelegate.swift in Sources */,
 				0AFDD197248154B900846157 /* ContentView.swift in Sources */,
