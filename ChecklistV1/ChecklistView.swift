@@ -10,15 +10,15 @@ import SwiftUI
 
 
 struct ChecklistView: View {
-    //@State var checklistItems = ["Walk the dog", "Brush my teeth", "Learn iOS development", "Soccer practice", "Eat Ice cream"]
+    
     @ObservedObject var checklist = Checklist()
     @State var newChecklistItemViewIsVisible = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklist.items){ ChecklistItem in
-                    RowView(checklistItem: ChecklistItem)
+                ForEach(checklist.items){ index in
+                    RowView(checklistItem: self.$checklist.items[index])
                 }//End of ForEach
                     .onDelete(perform: checklist.deleteListItem)
                     .onMove(perform: checklist.moveListItem)

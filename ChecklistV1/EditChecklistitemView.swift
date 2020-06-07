@@ -9,13 +9,19 @@
 import SwiftUI
 
 struct EditChecklistitemView: View {
+    //Properties
+    @Binding var checklistItem: ChecklistItem
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        Form{
+            TextField ("Name", text: $checklistItem.name)
+            Toggle("Completed", isOn: $checklistItem.isChecked)
+        }//End of Form
+    }//End of body
+}//End of struct
 
 struct EditChecklistitemView_Previews: PreviewProvider {
     static var previews: some View {
-        EditChecklistitemView()
+        EditChecklistitemView(checklistItem: .constant(ChecklistItem(name: "Sample item")))
     }
 }

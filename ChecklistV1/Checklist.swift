@@ -9,11 +9,10 @@
 import Foundation
 
 class Checklist: ObservableObject {
-    
     @Published var items = [
         ChecklistItem(name: "Walk the dog", isChecked: false),
         ChecklistItem(name: "Brush my teeth", isChecked: false),
-        ChecklistItem(name: "Walk the dog", isChecked: true),
+        ChecklistItem(name: "Learn iOS development", isChecked: true),
         ChecklistItem(name: "Soccer practice", isChecked: false),
         ChecklistItem(name: "Eat Ice cream", isChecked: true)
     ]
