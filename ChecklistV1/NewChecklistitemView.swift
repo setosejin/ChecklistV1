@@ -14,14 +14,16 @@ struct NewChecklistitemView: View {
     var body: some View {
         VStack{
             Text("Add new item")
-            Text("Endter item name")
-            TextField("Enter new item name here", text: $newItemName)
-            Button(action: {}){
-                HStack{
-                    Image(systemName: "plus.circle.fill")
-                    Text("Add new item")
-                }//End of HStack
-            }//End of Button
+            Form{
+                Text("Endter item name")
+                TextField("Enter new item name here", text: $newItemName)
+                Button(action: {}){
+                    HStack{
+                        Image(systemName: "plus.circle.fill")
+                        Text("Add new item")
+                    }//End of HStack
+                }//End of Button
+            }//End of Form
         }//End of VStack
     }//End of body
 }//End of View
